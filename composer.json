@@ -1,0 +1,13 @@
+{
+    "name": "vendor/sysalmacen",
+    "description": "Description of project sysalmacen.",
+    "authors": [
+        {
+            "name": "danmer",
+            "email": "your@email.here"
+        }
+    ],
+    "require": {
+
+    }
+}
