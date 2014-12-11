@@ -13,35 +13,40 @@ session_start();
     <form action="save" method="post" id="frm">
         <div class="span5">
             <label>Fecha:</label>
-            <input type="date" name="fecha_entrada" id="fecha"/>
+            <input type="date" name="fecha_entrada" id="fecha" value="<?php echo $obj['fecha_entrada'] ?>"/>
               <label>Tiemp:</label>
-            <input class="timepicker" type="time" name="tiempo" id="tiempo" />
+            <input class="timepicker" type="time" name="tiempo" id="tiempo" value="<?php echo $obj['tiempo'] ?>" />
             <label>Proveedor:</label>
             <select name="proveedor" id="proveedor">
                 <option>::Seleccione::</option>
                 <?php 
                 foreach ($proveedor as $p)
                 {
-                    echo "<option value='".$p['idproveedor']."'>".$p['nombre']."</option>";
+                    if($p['idproveedor']==$obj['proveedor']){
+                        echo "<option  selected value='".$p['idproveedor']."'>".$p['nombre']."</option>";
+                    }else{
+                       echo "<option value='".$p['idproveedor']."'>".$p['nombre']."</option>"; 
+                    }
+                    
                 }
                 ?>
             </select>
             <label>Tipo comprobante:</label>
             <select name="tipo_comprobante" id="tipo_comprobante">
                 <option>::Seleccione::</option>
-                <option value="Boleta">Boleta</option>
-                <option value="Factura">Factura</option>
+                <option <?php if($obj['tipo_comprobante']=='Boleta'){ echo "selected";}?> value="Boleta">Boleta</option>
+                <option <?php if($obj['tipo_comprobante']=='Factura'){ echo "selected";}?> value="Factura">Factura</option>
             </select>
         </div>
         <br/>
         <div class="span5">
             
             <label>Numero:</label>
-            <input type="text" name="numero_comprobante" id="numero_comprobante"/>
+            <input type="text" name="numero_comprobante" id="numero_comprobante" value="<?php echo $obj['numero_comprobante'] ?>"/>
             <label>Guia remision:</label>
-            <input type="text" name="guia_remision" id="guia_remision"/>
+            <input type="text" name="guia_remision" id="guia_remision" value="<?php echo $obj['guia_remision'] ?>"/>
             <label>Chofer:</label>
-            <input type="text" name="chofer" id="chofer"/>
+            <input type="text" name="chofer" id="chofer" value="<?php echo $obj['chofer'] ?>"/>
             <input type="hidden" name="id_login" id="id_login" value="<?php echo $_SESSION["usuario"];?>" />
         </div>
             
@@ -80,16 +85,34 @@ session_start();
                    
                     </thead>
                     <tbody id="cuerpo_table">
-                        
+                        <?php 
+                        $cont=0;
+                        if($obj_detalle!=null){
+                            foreach ($obj_detalle as $dt){
+                                echo "<tr id='".$dt['id_articulo']."'>";
+                                echo "<td> <input type='hidden' name='articulo[]' id='articulo' value=''/>".$dt['id_articulo']."</td>";
+                                echo "<td>".$dt['descripcion']."</td>";
+                                echo "<td> <input type='hidden' name='stock".$dt['id_articulo']." '  id='stock".$dt['id_articulo']." ' />".$dt['stock']."</td>";
+                                echo "<td>".$dt['unidad_medida']."</td>";
+                                echo "<td>".$dt['categoria']."</td>";
+                                echo "<td> <input type='hidden' name='cantidad".$dt['id_articulo']."' id='cantidad".$dt['id_articulo']."' value='".$dt['cantidad']."'/>".$dt['cantidad']."</td>";
+                             
+                                echo "<td><a   onclick='javascript:elimina(".$dt['id_articulo'].");' >Eliminar<a></td>";
+                                   echo "</tr>";
+                                   $cantidad=$cantidad+$dt['cantidad'];
+                                   $cont=$cont+1;
+                            }
+                        }
+                        ?>
                     </tbody>
                 </table>
                 <div>
                     <table id="">
                          <tr>
                         <th colspan="5">Nro de productos</th>
-                        <th><input type=""  id="n_productos" name=""/></th>
+                        <th><input type=""  id="n_productos" name="" value="<?php echo $cont;?>"/></th>
                         <th>Cantidad total</th>
-                        <th><input type="text" id="cantidad_total" name="cantidad_total" /></th>
+                        <th><input type="text" id="cantidad_total" name="cantidad_total"  value="<?php echo $cantidad; ?>"/></th>
                     </tr>
                     </table>
                 </div>           </div>     
@@ -144,12 +167,24 @@ $(function()
         tr+="<td>"+descripcion+"</td>";
          tr+="<td>"+categoria+"</td>";
          tr+="<td>"+unidad+"</td>";
-         tr+="<td><input type='' name='stock"+idarticulo+"' id='stock"+idarticulo+"' value='"+stock+"'/>"+stock+"</td>";
+         tr+="<td><input type='hidden' name='stock"+idarticulo+"' id='stock"+idarticulo+"' value='"+stock+"'/>"+stock+"</td>";
           tr+="<td><input type='hidden' name='articulo"+idarticulo+"' id='articulo"+idarticulo+"' value='"+cantidad+"'/>"+cantidad+"</td>";
            tr+="<td><a   onclick='javascript:elimina("+idarticulo+");' >Eliminar<a></td>";
            tr+="</tr>";
            //alert(tr);
            $("#cuerpo_table").append(tr);
+           cantidad_t=$("#n_productos").val();
+           if(cantidad_t==null){
+               cantidad_t=0;
+           }
+           total_c=$("#cantidad_total").val();
+           if(total_c==''){
+               total_c=0;
+           }
+           cantidad_t=cantidad_t+1;
+           total_c=total_c+cantidad;
+           $("#cantidad_total").val(total_c);
+           $("#n_productos").val(cantidad_t);
        }
        }
        }
@@ -170,7 +205,20 @@ return false;
 
     });
      function elimina(id){
- 
+     cantidad=$("#cantidad"+id).val();
+  cantidad_t=$("#n_productos").val();
+           if(cantidad_t==null){
+               cantidad_t=0;
+           }
+           total_c=$("#cantidad_total").val();
+           if(total_c==''){
+               total_c=0;
+           }
+           cantidad_t=cantidad_t-1;
+           total_c=total_c-cantidad;
+           $("#cantidad_total").val(total_c);
+           $("#n_productos").val(cantidad_t);
   $("#"+id).remove();
+  
  }
 </script>

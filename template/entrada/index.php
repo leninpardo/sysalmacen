@@ -32,7 +32,7 @@ and open the template in the editor.
                             <th  rowspan="1"colspan="3">Acciones</th>
                         </tr>
                         <tr>
-                            <th>Ver</th>
+                            
                             <th>Editar</th>
                             <th>Eliminar</th>
                         </tr>
@@ -41,12 +41,12 @@ and open the template in the editor.
                             foreach ($grid as $g)
                             {
                                 echo "<tr>";
-                                echo "<td>".$g['id_entadas']."</td>";
+                                echo "<td>".$g['id_entradas']."</td>";
                                 echo "<td>".$g['fecha_entrada']."</td>";
                                 echo "<td>".$g['numero_comprobante']."</td>";
-                                echo "<td>ver</td>";
-                                echo "<td>editar</td>";
-                                echo "<td>eliminar</td>";
+                              
+                                echo "<td><a href='editar&id=".$g['id_entradas']."' >editar</a></td>";
+                                echo "<td><a href='eliminar&id=".$g['id_entradas']."'>eliminar</a></td>";
                                 echo "</tr>";
                             }
                             ?>
