@@ -32,7 +32,7 @@ and open the template in the editor.
                             <th  rowspan="1"colspan="3">Acciones</th>
                         </tr>
                         <tr>
-                            <th>Ver</th>
+                            
                             <th>Editar</th>
                             <th>Eliminar</th>
                         </tr>
@@ -44,9 +44,8 @@ and open the template in the editor.
                                 echo "<td>".$g['id_salida']."</td>";
                                 echo "<td>".$g['fecha_salida']."</td>";
                                 echo "<td>".$g['numero_comprobante']."</td>";
-                                echo "<td>ver</td>";
-                                echo "<td>editar</td>";
-                                echo "<td>eliminar</td>";
+                                 echo "<td><a href='editar&id=".$g['id_salida']."' >editar</a></td>";
+                                echo "<td><a href='eliminar&id=".$g['id_salida']."'>eliminar</a></td>";
                                 echo "</tr>";
                             }
                             ?>

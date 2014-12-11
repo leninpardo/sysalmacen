@@ -11,6 +11,8 @@
  *
  * @author Investigación13
  */
-class salida {
+require_once 'baguera/ORMBase.php';
+class salida extends ORMBase{
     //put your code here
+    protected  $tablename="salida";
 }

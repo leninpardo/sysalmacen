@@ -57,7 +57,7 @@ INNER JOIN categoria on(categoria.id_categoria) GROUP BY 1");*/
 
     public function save() {
         $cate = new entrada();
-        if ($_REQUEST['id_entrada'] == null) {
+        if ($_REQUEST['id_entradas'] == null) {
             try {
                 $_REQUEST['id_entradas'] = $cate->max_id("id_entradas");
                 //$_REQUEST['id_login']=$_SESSION['usuario_id'];
@@ -74,7 +74,7 @@ INNER JOIN categoria on(categoria.id_categoria) GROUP BY 1");*/
                     $_REQUEST['cantidad'] = $_REQUEST['articulo' . $a];
                     $obj_det->setFields($_REQUEST);
                     $obj_det->create(true);
-                    $_REQUEST['stock'] = $_REQUEST['stock' . $a] - $_REQUEST['cantidad'];
+                    $_REQUEST['stock'] = $_REQUEST['stock' . $a] + $_REQUEST['cantidad'];
                     $obj_art->find($_REQUEST);
                     $obj_art->setFields($_REQUEST);
                     $obj_art->update();
@@ -84,11 +84,50 @@ INNER JOIN categoria on(categoria.id_categoria) GROUP BY 1");*/
             }
         } else {
             try {
+                require_once 'model/articulo.php';
+                $prod=new articulo();
+               $datos_det=ORMConnection::Execute("SELECT articulos.id_articulo,articulos.descripcion,categoria.categoria,unidad_medida.unidad_medida,articulos.stock,detalle_entrada.cantidad
+from articulos INNER JOIN detalle_entrada on(detalle_entrada.id_articulo=articulos.id_articulo)
+INNER JOIN categoria on(categoria.id_categoria=articulos.id_categoria)
+INNER JOIN  unidad_medida on(unidad_medida.id_medida=articulos.id_medida)
+WHERE detalle_entrada.id_entradas=?", array($_REQUEST['id_entradas']));
+                foreach ($datos_det as $dt)
+                {
+                   $_REQUEST['id_articulo']=$dt['id_articulo'];
+                   
+                   $prod->find($_REQUEST);
+                   $datos=$prod->getFields();
+                   $_REQUEST['stock']=$datos['stock']-$dt['cantidad'];
+                   $prod->find($_REQUEST);
+                   $prod->setFields($_REQUEST);
+                   $prod->update();
+                   
+                   
+                }
+                 ORMConnection::Execute("delete from detalle_entrada where id_entradas=?",array($_REQUEST['id_entradas']));
+               // ORMConnection::Execute("delete from detalle_entrada where detalle_entrada.id_entradas=?",array($_REQUEST['id']));
                 $cate->find($_REQUEST);
                 $cate->setFields($_REQUEST);
                 $cate->update();
                 //
                 
+                 require_once 'model/detalle_entrada.php';
+                $obj_det = new detalle_entrada();
+                
+                $obj_art = new articulo();
+                foreach ($_REQUEST['articulo'] as $a) {
+                    $_REQUEST['id_detalle_entrada'] = $obj_det->max_id("id_detalle_entrada");
+                    $_REQUEST['id_articulo'] = $a;
+
+                    $_REQUEST['cantidad'] = $_REQUEST['articulo'.$a];
+                    $obj_det->setFields($_REQUEST);
+                    $obj_det->create(true);
+                  
+                   $_REQUEST['stock'] = $_REQUEST['stock'.$a] + $_REQUEST['cantidad'];
+                    $obj_art->find($_REQUEST);
+                    $obj_art->setFields($_REQUEST);
+                    $obj_art->update();
+                }
             } catch (ORMException $e) {
                 $respuesta = "error" . $e;
             }

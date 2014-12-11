@@ -13,6 +13,7 @@ session_start();
     <form action="save" method="post" id="frm">
         <div class="span5">
             <label>Fecha:</label>
+            <input type="hidden" name="id_entradas" id="id_entradas" value="<?php echo $obj['id_entradas']; ?>"/>
             <input type="date" name="fecha_entrada" id="fecha" value="<?php echo $obj['fecha_entrada'] ?>"/>
               <label>Tiemp:</label>
             <input class="timepicker" type="time" name="tiempo" id="tiempo" value="<?php echo $obj['tiempo'] ?>" />
@@ -90,12 +91,12 @@ session_start();
                         if($obj_detalle!=null){
                             foreach ($obj_detalle as $dt){
                                 echo "<tr id='".$dt['id_articulo']."'>";
-                                echo "<td> <input type='hidden' name='articulo[]' id='articulo' value=''/>".$dt['id_articulo']."</td>";
+                                echo "<td> <input type='hidden' name='articulo[]' id='articulo[]' value='".$dt['id_articulo']."'/>".$dt['id_articulo']."</td>";
                                 echo "<td>".$dt['descripcion']."</td>";
-                                echo "<td> <input type='hidden' name='stock".$dt['id_articulo']." '  id='stock".$dt['id_articulo']." ' />".$dt['stock']."</td>";
+                                echo "<td> <input type='hidden' name='stock".$dt['id_articulo']."' id='stock".$dt['id_articulo']."' value='".$dt['stock']."'/> ".$dt['stock']."</td>";
                                 echo "<td>".$dt['unidad_medida']."</td>";
                                 echo "<td>".$dt['categoria']."</td>";
-                                echo "<td> <input type='hidden' name='cantidad".$dt['id_articulo']."' id='cantidad".$dt['id_articulo']."' value='".$dt['cantidad']."'/>".$dt['cantidad']."</td>";
+                                echo "<td> <input type='hidden' name='articulo".$dt['id_articulo']."' id='articulo".$dt['id_articulo']."' value='".$dt['cantidad']."'/>".$dt['cantidad']."</td>";
                              
                                 echo "<td><a   onclick='javascript:elimina(".$dt['id_articulo'].");' >Eliminar<a></td>";
                                    echo "</tr>";
@@ -157,12 +158,12 @@ $(function()
        if(cantidad==''){
            alert("llene la cantidad");
        }else{
-           if(stock<cantidad)
+           if(parseFloat(stock)<parseFloat(cantidad))
            {
                alert("No hay suficiente stock");
            }else{
        tr="<tr id='"+idarticulo+"'>";
-       tr+="<td><input type= 'hidden' name='articulo[]' id='articulo' value='"+idarticulo+"'/>"+idarticulo+"</td>";
+       tr+="<td><input type= 'hidden' name='articulo[]' id='articulo[]' value='"+idarticulo+"'/>"+idarticulo+"</td>";
       
         tr+="<td>"+descripcion+"</td>";
          tr+="<td>"+categoria+"</td>";
@@ -181,8 +182,8 @@ $(function()
            if(total_c==''){
                total_c=0;
            }
-           cantidad_t=cantidad_t+1;
-           total_c=total_c+cantidad;
+           cantidad_t=parseFloat(cantidad_t)+1;
+           total_c=parseFloat(total_c)+parseFloat(cantidad);
            $("#cantidad_total").val(total_c);
            $("#n_productos").val(cantidad_t);
        }
