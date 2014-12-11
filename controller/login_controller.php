@@ -23,6 +23,7 @@ class login_controller extends controller_api {
         if(count($datos)>0)
         {
             $_SESSION['usuario_id']=$datos[0]['user'];
+             $_SESSION['usuario']=$datos[0]['id_login'];
             $_SESSION['nombre']=$datos[0]['nombre'];
             echo "<script> window.location='template/index'; </script>"; 
         }else{

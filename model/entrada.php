@@ -12,7 +12,7 @@
  * @author Investigación13
  */
 include_once 'baguera/ORMBase.php';
-class entrada {
+class entrada extends ORMBase{
     //put your code here
      protected $tablename="entradas";
 }

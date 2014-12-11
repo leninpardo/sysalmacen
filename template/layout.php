@@ -10,6 +10,10 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <title>Sistema de Almacen</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+                <script src="/<?php echo file;?>/js/jquery.min.js" type="text/javascript"></script>
+                <script src="/<?php echo file;?>/js/jquery.blockUI.js" type="text/javascript"></script>
+                 <script src="/<?php echo file;?>/js/funciones_globales.js" type="text/javascript"></script>
+                 <script src="/<?php echo file;?>/js/required.js" type="text/javascript"></script>
         <!-- bootstrap 3.0.2 -->
         <link href="/<?php echo file;?>/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <!-- font Awesome -->
@@ -375,11 +379,12 @@ and open the template in the editor.
 
 
         <!-- jQuery 2.0.2 -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.jss"></script>
         <!-- jQuery UI 1.10.3 -->
-        <script src="/<?php echo file;?>/js/jquery-ui-1.10.3.min.jss" type="text/javascript"></script>
+
         <!-- Bootstrap -->
-         <script src="/<?php echo file;?>/js/plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
+         
+<script src="/<?php echo file;?>/js/plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
          
         <script src="/<?php echo file;?>/js/bootstrap.min.js" type="text/javascript"></script>
            <script src="/<?php echo file;?>/js/plugins/datatables/jquery.dataTables.js" type="text/javascript"></script>
@@ -396,6 +401,5 @@ and open the template in the editor.
 
         <!-- AdminLTE for demo purposes -->
         <script src="/<?php echo file;?>/js/AdminLTE/demo.js" type="text/javascript"></script>
-
     </body>
 </html>

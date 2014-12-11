@@ -23,7 +23,7 @@ class articulo_controller {
          ///
       $grid=new grid();
         $view=new View();
-        $grid->tablename="articulos";
+        $grid->tablename="vista_articulos";
         $data=array();
         $data["grid"]=$grid->index();
         $view->setData($data);
