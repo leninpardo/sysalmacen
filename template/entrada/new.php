@@ -43,7 +43,7 @@ session_start();
         <div class="span5">
             
             <label>Numero:</label>
-            <input type="text" name="numero_comprobante" placeholder="Numero comprobante" id="numero_comprobante" value="<?php echo $obj['numero_comprobante'] ?>"/>
+            <input type="number"  name="numero_comprobante"  placeholder="Numero comprobante"  id="numero_comprobante" value="<?php echo $obj['numero_comprobante'] ?>"/>
             <label>Guia remision:</label>
             <input type="text" name="guia_remision" placeholder="Guia remision" id="guia_remision" value="<?php echo $obj['guia_remision'] ?>"/>
             <label>Chofer:</label>
@@ -81,17 +81,17 @@ session_start();
                 <table class="table table-bordered" id="table">
                     <thead>
                     <tr>
-                        <th>Item</th>
-                         <th>Producto</th>
-                          <th>Stock</th>
-                           <th>Unidad medida</th>
-                            <th>Categoria</th>
-                            <th>Cantidad</th>
-                            <th>Acciones</th>
+                        <th style="text-align: center" >Item</th>
+                        <th style="text-align: center">Producto</th>
+                        <th style="text-align: center">Categoria</th>
+                        <th style="text-align: center">Unidad medida</th>
+                        <th style="text-align: center">Stock</th>
+                        <th style="text-align: center">Cantidad</th>
+                        <th style="text-align: center">Acciones</th>
                     </tr>
-                 
-                   
+
                     </thead>
+                    
                     <tbody id="cuerpo_table">
                         <?php 
                         $cont=0;
@@ -113,6 +113,17 @@ session_start();
                         }
                         ?>
                     </tbody>
+                    
+                         <tr role="row">              
+                          <th>&nbsp;</th>
+                          <th>&nbsp;</th>
+                          <th>&nbsp;</th>
+                          <th>&nbsp;</th>
+                          <th>&nbsp;</th>
+                          <th>&nbsp;</th>
+                          <th>&nbsp;</th>
+                          
+                        </tr>          
                 </table>
                 <div>
                     <table id="">
@@ -168,10 +179,7 @@ $(function()
        if(cantidad==''){
            alert("llene la cantidad");
        }else{
-           if(parseFloat(stock)<parseFloat(cantidad))
-           {
-               alert("No hay suficiente stock");
-           }else{
+           
        tr="<tr id='"+idarticulo+"'>";
        tr+="<td><input type= 'hidden' name='articulo[]' id='articulo[]' value='"+idarticulo+"'/>"+idarticulo+"</td>";
       
@@ -197,7 +205,7 @@ $(function()
            $("#cantidad_total").val(total_c);
            $("#n_productos").val(cantidad_t);
        }
-       }
+       
        }
        return false;
    });

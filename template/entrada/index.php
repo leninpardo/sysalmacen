@@ -23,13 +23,17 @@ and open the template in the editor.
                 </section>
 
                 <!-- Main content -->
+                 
+
+                    
+                
                 <section class="content">
-                    <table class="table table-bordered">
+                    <table class="table table-bordered">                        
                         <tr>
-                            <th rowspan="2" >item</th>
-                            <th rowspan="2">fecha entrada</th>
-                            <th rowspan="2">nro comprobante</th>
-                            <th  rowspan="1"colspan="3">Acciones</th>
+                            <th style="text-align: center" rowspan="2" >ITEM</th>
+                            <th style="text-align: center" rowspan="2">FECHA ENTRADA</th>
+                            <th style="text-align: center" rowspan="2">N° COMPROBANTE</th>
+                            <th style="text-align: center" rowspan="1"colspan="3">ACCIONES</th>
                         </tr>
                         <tr>
                             
@@ -50,6 +54,7 @@ and open the template in the editor.
                                 echo "</tr>";
                             }
                             ?>
+                       
                         
                     </table>
                 </section><!-- /.content -->

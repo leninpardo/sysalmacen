@@ -8,24 +8,12 @@ and open the template in the editor.
     <dv class="ui-accordion-content">Listado de Articulos</dv>
     <table class="table table-bordered table-hover">
         <tr>
-            <td>
-                item
-            </td>
-            <td>
-                Descripcion
-            </td>
-            <td>
-                Unidad medida
-            </td>
-            <td>
-                Categoria
-            </td>
-            <td>
-                Stock
-            </td>
-            <td>
-                Acciones
-            </td>
+            <td>item</td>
+            <td>Descripcion</td>
+            <td>Unidad medida</td>
+            <td>Categoria</td>
+            <td>Stock</td>
+            <td>Acciones</td>
         </tr>
         <?php 
         foreach ($grid as $g){

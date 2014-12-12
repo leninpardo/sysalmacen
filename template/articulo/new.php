@@ -17,7 +17,7 @@ and open the template in the editor.
     <div>
         <fieldset>
             <h1><?php echo $message; ?></h1>
-            <legend>Registro de Nueva Categoría</legend>
+            <legend>Registro de Nuevos articulos o productos</legend>
             <form action="save" method="post">
                 <input type="hidden" name="id_articulo" id="id_articulo" value="<?php echo $obj['id_articulo']; ?>"/>
                 <div class="span8">
@@ -28,7 +28,7 @@ and open the template in the editor.
                             <td>
                                 
                                 <select id="id_categoria" name="id_categoria" class="form-control">
-                                    <option value="">::Seleccione::</option>
+                                    <option value="">Seleccione</option>
                                    <?php 
                                    foreach ($categoria as $c){
                                        if($c['id_categoria']==$obj['id_categoria'])
@@ -75,9 +75,13 @@ and open the template in the editor.
                             <td><input type="text" class='form-control' name="stock" id="stock" value="<?php echo $obj['stock'];?>"/></td>
                         </tr>
                         <tr>
+                            <td><br></td>
+                        </tr>    
+                        <tr>
                             <td>
                         <input type="submit" class="btn btn-success" value="guardar" id="save" name="save"/>
                             </td>
+                            
                             <td>
                                  <a href="index" class="btn btn-success">Atras</a>
                             </td>

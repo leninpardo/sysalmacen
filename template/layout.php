@@ -42,12 +42,13 @@ and open the template in the editor.
         <![endif]-->
     </head>
     <body class="skin-blue">
-        <!-- header logo: style can be found in header.less -->
+        
+        <!-- Parte derecha -->
         <header class="header">
             <a href="/<?php echo file;?>/template/index" class="logo">
-                <!-- Add the class icon to your logo image or logo icon to add the margining -->
                 Sistema de Almacenes
             </a>
+            
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
                 <!-- Sidebar toggle button-->
@@ -59,9 +60,6 @@ and open the template in the editor.
                 </a>
                 <div class="navbar-right">
                     <ul class="nav navbar-nav">
-                        <!-- Messages: style can be found in dropdown.less-->
-                      
-                        <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-user"></i>
@@ -70,7 +68,7 @@ and open the template in the editor.
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header bg-light-blue">
-                                    <img src="/<?php echo file; ?>/img/avatar3.png" class="img-circle" alt="User Image" />
+                                    <img src="/<?php echo file; ?>/img/almacen.jpg" class="img-circle" alt="User Image" />
                                     <p>
                                        <?php echo $_SESSION['nombre'];?> - Encargado de almacen
                                        <small>Conectado <?php echo date("Y-m-d"); ?></small>
@@ -91,6 +89,8 @@ and open the template in the editor.
                 </div>
             </nav>
         </header>
+        
+        <!-- Parte izquierda-->
         <div class="wrapper row-offcanvas row-offcanvas-left">
             <!-- Left side column. contains the logo and sidebar -->
             <aside class="left-side sidebar-offcanvas">
@@ -99,10 +99,10 @@ and open the template in the editor.
                     <!-- Sidebar user panel -->
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img src="/<?php echo file; ?>/img/avatar3.png" class="img-circle" alt="User Image" />
+                            <img src="/<?php echo file; ?>/img/almacen.jpg" class="img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
-                            <p>Hello, <?php echo $_SESSION['nombre'];?></p>
+                            <p>Bienvenido: <?php echo $_SESSION['nombre'];?></p>
 
                             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                         </div>
@@ -146,40 +146,21 @@ and open the template in the editor.
                             <a href="/<?php echo file;?>/usuario/index">
                                 <i class="fa fa-users"></i> <span>Usuarios</span>
                             </a>
-                        </li>
-                    
-                      
-                       
-                       
+                        </li>   
                     </ul>
                 </section>
-                <!-- /.sidebar -->
             </aside>
 
             <!-- Right side column. Contains the navbar and content of the page -->
             <aside class="right-side">
-                
-                <!-- Content Header (Page header) -->
-                
-
                 <!-- Main content -->
                 <section class="content">
-<?php echo $content;?>
-                    
+                    <?php echo $content;?>
                </section><!-- /.Left col -->
                         <!-- right col (We are only adding the ID to make the widgets sortable)-->
-                        <section class="col-lg-5 connectedSortable"> 
-                          
-
-                        </section><!-- right col -->
-                    </div><!-- /.row (main row) -->
-
-                </section><!-- /.content -->
-            </aside><!-- /.right-side -->
-        </div><!-- ./wrapper -->
-
-        <!-- add new calendar event modal -->
-
+                        
+            </aside>            
+        </div>
 
         <!-- jQuery 2.0.2 -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.jss"></script>
