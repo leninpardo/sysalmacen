@@ -15,7 +15,7 @@ session_start();
             <label>Fecha:</label>
             <input type="hidden" name="id_entradas" id="id_entradas" value="<?php echo $obj['id_entradas']; ?>"/>
             <input type="date" name="fecha_entrada" id="fecha" value="<?php echo $obj['fecha_entrada'] ?>"/>
-              <label>Tiemp:</label>
+              <label>Hora:</label>
             <input class="timepicker" type="time" name="tiempo" id="tiempo" value="<?php echo $obj['tiempo'] ?>" />
             <label>Proveedor:</label>
             <select name="proveedor" id="proveedor">
@@ -43,33 +43,40 @@ session_start();
         <div class="span5">
             
             <label>Numero:</label>
-            <input type="text" name="numero_comprobante" id="numero_comprobante" value="<?php echo $obj['numero_comprobante'] ?>"/>
+            <input type="text" name="numero_comprobante" placeholder="Numero comprobante" id="numero_comprobante" value="<?php echo $obj['numero_comprobante'] ?>"/>
             <label>Guia remision:</label>
-            <input type="text" name="guia_remision" id="guia_remision" value="<?php echo $obj['guia_remision'] ?>"/>
+            <input type="text" name="guia_remision" placeholder="Guia remision" id="guia_remision" value="<?php echo $obj['guia_remision'] ?>"/>
             <label>Chofer:</label>
-            <input type="text" name="chofer" id="chofer" value="<?php echo $obj['chofer'] ?>"/>
+            <input type="text" name="chofer" placeholder="Chofer" id="chofer" value="<?php echo $obj['chofer'] ?>"/>
             <input type="hidden" name="id_login" id="id_login" value="<?php echo $_SESSION["usuario"];?>" />
         </div>
-            
-            <div>
-                <fieldset>
+        <br/><br/>
+              <fieldset>
+
+        <div class="span5">
                     <input type="hidden" name="id_articulo" id="id_articulo" />
-                    <legend>Productos</legend>
+                    <legend>Producto que ingresa</legend>                    
                     <label>Producto</label>
-                    <input readonly="" type="text" name="producto" id="producto"/>
-                        
                     <span><a id="buscar" class="btn btn-success" >buscar</a></span>
+                    <input readonly="" type="text" name="producto" placeholder="Buscar Producto" id="producto"/>    
+                    
                      <label>Categoria</label>
                      <input readonly="" type="text" name="categoria" id="categoria"/>
                      <label>unidad medida</label>
                      <input readonly="" type="text" name="unidad" id="unidad"/>
-                    <label>Cantidad(stock)</label>
-                    <input readonly=""type="text" name="stock" id="stock"/>
-                      <label>Cantidad</label>
-                      <input  type="text" name="cantidad" id="cantidad"/>
-                        <span><a id="add" class="btn btn-success">Add</a></span>
+        </div>
+        <br>
+        <div class="span5">     
+            <label>Cantidad(stock)</label>
+            <input readonly=""type="text" name="stock" id="stock"/>
+            <label>Cantidad</label>
+            <input  type="text" name="cantidad" placeholder="Cantidad de ingreso" id="cantidad"/>
+            <span><a id="add" class="btn btn-success">Agregar</a></span>
+        </div>
                 </fieldset>
-            </div>
+                
+        <br><br>
+        <legend>liata de productos ingresados</legend> 
             <div class="product">
                 <table class="table table-bordered" id="table">
                     <thead>
@@ -111,16 +118,19 @@ session_start();
                     <table id="">
                          <tr>
                         <th colspan="5">Nro de productos</th>
-                        <th><input type=""  id="n_productos" name="" value="<?php echo $cont;?>"/></th>
+                        <th><input type="" readonly="" id="n_productos" name="" value="<?php echo $cont;?>"/></th>
                         <th>Cantidad total</th>
-                        <th><input type="text" id="cantidad_total" name="cantidad_total"  value="<?php echo $cantidad; ?>"/></th>
+                        <th><input type="text" readonly="" id="cantidad_total" name="cantidad_total"  value="<?php echo $cantidad; ?>"/></th>
                     </tr>
                     </table>
-                </div>           </div>     
-        <div class="form-control">
+                </div>           
+            </div>
+        <br><br>
+        <center><div class="span5"  >
             <input type="submit" class="btn btn-success" id="aceptar" name="aceptar"/>
             <a href="index" class="btn btn-success">Atras</a>
-        </div>   </form>
+        </div></center>   
+    </form>
 </div>
 <div name="emergente" id="emergente">
     

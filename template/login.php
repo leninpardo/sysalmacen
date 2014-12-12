@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>::Sumák:: Sistema Integrado Comercialización::</title>
+        <title>Sistema de almacen</title>
         <link href="/<?php echo file; ?>/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="/<?php echo file; ?>/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <link href="/<?php echo file; ?>/css/AdminLTE.css" rel="stylesheet" type="text/css" />
@@ -40,14 +40,7 @@ and open the template in the editor.
                 </div>
             </form>
 
-            <div class="margin text-center">
-                <span>Sign in using social networks</span>
-                <br/>
-                <button class="btn bg-light-blue btn-circle"><i class="fa fa-facebook"></i></button>
-                <button class="btn bg-aqua btn-circle"><i class="fa fa-twitter"></i></button>
-                <button class="btn bg-red btn-circle"><i class="fa fa-google-plus"></i></button>
-
-            </div>
+           
         </div>
         <script src="/<?php echo file; ?>/js/jquery.min.js"></script>
         <!-- Bootstrap -->

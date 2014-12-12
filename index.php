@@ -1,5 +1,5 @@
 <?php
-///error_reporting(E_ERROR);
+error_reporting(E_ERROR);
 define("file", 'sysalmacen');
 require './api/controller_base.php';
 require './api/slave_controller.php';

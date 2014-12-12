@@ -76,25 +76,13 @@ and open the template in the editor.
                                        <small>Conectado <?php echo date("Y-m-d"); ?></small>
                                     </p>
                                 </li>
-                                <!-- Menu Body -->
-                                <li class="user-body">
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Followers</a>
-                                    </div>
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Sales</a>
-                                    </div>
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Friends</a>
-                                    </div>
-                                </li>
-                                <!-- Menu Footer-->
+                              
                                 <li class="user-footer">
                                     <div class="pull-left">
                                         <a href="#" class="btn btn-default btn-flat">Perfil</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="/<?php echo file; ?>/login/logout" class="btn btn-default btn-flat">Sign out</a>
+                                        <a href="/<?php echo file; ?>/login/logout" class="btn btn-default btn-flat">Salir</a>
                                     </div>
                                 </li>
                             </ul>
@@ -132,8 +120,8 @@ and open the template in the editor.
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li class="active">
-                            <a href="index">
-                                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                            <a href="/<?php echo file;?>/template/index">
+                                <i class="fa fa-dashboard"></i> <span>Inicio</span>
                             </a>
                         </li>
                         
@@ -149,7 +137,8 @@ and open the template in the editor.
                                 <li><a href="/<?php echo file;?>/articulo/index"><i class="fa fa-angle-double-right"></i> Articulos</a></li>
                                 <li><a href="/<?php echo file;?>/unidad/index"><i class="fa fa-angle-double-right"></i> Unidades medidas</a></li>
                                 <li><a href="/<?php echo file;?>/categoria/index"><i class="fa fa-angle-double-right"></i> Categoria </a></li>
-                                
+                                <li><a href="/<?php echo file;?>/"><i class="fa fa-angle-double-right"></i> Proveedor </a></li>
+
                             </ul>
                         </li>
                       
