@@ -19,14 +19,14 @@ and open the template in the editor.
             <h6><?php echo $message;?></h6>
             <legend>Registro de Nueva Categoría</legend>
             <form action="save" method="post">
-                <div class="span5">
+                <div class="span">
                     <label for="categoria">Categoria:</label>
-                    <input type="text" id="categoria" name="categoria" value="<?php echo $obj['categoria']; ?>"/>
-                    <input type="hidden" id="id_categoria" name="id_categoria" value="<?php echo $obj['id_categoria']; ?>"/>
-                    <label>vv</label>
-                    <input type="text" id="campoejemplo" name="campoejemplo" value="<?php echo $obj['campoejemplo']; ?>"/>
+                    <input type="text"  style="width: 30%;" id="categoria" class='form-control' name="categoria" value="<?php echo $obj['categoria']; ?>"/>
+                    <input type="hidden"  class='form-control' id="id_categoria" name="id_categoria" value="<?php echo $obj['id_categoria']; ?>"/>
+                   
                     <br/>
                     <input type="submit" class="btn btn-success" value="guardar" id="save" name="save"/>
+                     <a href="index" class="btn btn-success">Atras</a>
                 </div>
             </form>
         </fieldset>

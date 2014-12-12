@@ -35,7 +35,7 @@ class unidad_controller {
         $data=array();
         $view->setData($data);
          $view->setLayout("template/layout.php");
-        $view->setTemplate("template/categoria/new.php");
+        $view->setTemplate("template/unidad_medida/new.php");
         $view->render();  
     }
     public function editar()

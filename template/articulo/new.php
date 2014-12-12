@@ -20,14 +20,14 @@ and open the template in the editor.
             <legend>Registro de Nueva Categoría</legend>
             <form action="save" method="post">
                 <input type="hidden" name="id_articulo" id="id_articulo" value="<?php echo $obj['id_articulo']; ?>"/>
-                <div class="span5">
+                <div class="span8">
                     <table>
                         <tr>
                             <td><label for="categoria">Categoria:</label>
                             </td>
                             <td>
                                 
-                                <select id="id_categoria" name="id_categoria" class="selected">
+                                <select id="id_categoria" name="id_categoria" class="form-control">
                                     <option value="">::Seleccione::</option>
                                    <?php 
                                    foreach ($categoria as $c){
@@ -48,7 +48,7 @@ and open the template in the editor.
                                 <label>Unidad Medida</label> 
                             </td>
                             <td>
-                                <select name="id_medida" id="id_medida">
+                                <select name="id_medida" id="id_medida" class="form-control">
                                       <option value="">::Seleccione::</option>
                                    <?php 
                                    foreach ($unidad as $c){
@@ -64,19 +64,22 @@ and open the template in the editor.
                         </tr>
                         <tr>
                             <td>Articulo</td>
-                            <td><input type="text" name="articulo" id="articulo" value="<?php echo $obj['articulo'];?>" /></td>
+                            <td><input type="text" class='form-control' name="articulo" id="articulo" value="<?php echo $obj['articulo'];?>" /></td>
                         </tr>
                          <tr>
                             <td>Descripcion</td>
-                            <td><input type="text" name="descripcion" id="descripcion" value="<?php echo $obj['descripcion'];?>"/></td>
+                            <td><input type="text" class='form-control' name="descripcion" id="descripcion" value="<?php echo $obj['descripcion'];?>"/></td>
                         </tr>
                          <tr>
                             <td>Stock</td>
-                            <td><input type="text" name="stock" id="stock" value="<?php echo $obj['stock'];?>"/></td>
+                            <td><input type="text" class='form-control' name="stock" id="stock" value="<?php echo $obj['stock'];?>"/></td>
                         </tr>
                         <tr>
                             <td>
                         <input type="submit" class="btn btn-success" value="guardar" id="save" name="save"/>
+                            </td>
+                            <td>
+                                 <a href="index" class="btn btn-success">Atras</a>
                             </td>
                     </tr>
                 </div>

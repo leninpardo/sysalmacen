@@ -25,12 +25,15 @@ and open the template in the editor.
         
                         <tr>
                             <td>Unidad Medida</td>
-                            <td><input type="text" name="unidad_medida" id="unidad_medida" value="<?php echo $obj['unidad_medida'];?>" /></td>
+                            <td><input type="text" class='form-control' name="unidad_medida" id="unidad_medida" value="<?php echo $obj['unidad_medida'];?>" /></td>
                         </tr>
                       
                         <tr>
                             <td>
                         <input type="submit" class="btn btn-success" value="guardar" id="save" name="save"/>
+                            </td>
+                            <td>
+                                 <a href="index" class="btn btn-success">Atras</a>
                             </td>
                     </tr>
                 </div>
