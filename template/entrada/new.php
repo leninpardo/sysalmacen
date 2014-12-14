@@ -15,7 +15,7 @@ session_start();
             <label>Fecha:</label>
             <input type="hidden" name="id_entradas" id="id_entradas" value="<?php echo $obj['id_entradas']; ?>"/>
             <input type="date" name="fecha_entrada" id="fecha" value="<?php echo $obj['fecha_entrada'] ?>"/>
-              <label>Tiemp:</label>
+              <label>Hora:</label>
             <input class="timepicker" type="time" name="tiempo" id="tiempo" value="<?php echo $obj['tiempo'] ?>" />
             <label>Proveedor:</label>
             <select name="proveedor" id="proveedor">
@@ -43,11 +43,11 @@ session_start();
         <div class="span5">
             
             <label>Numero:</label>
-            <input type="text" name="numero_comprobante" id="numero_comprobante" value="<?php echo $obj['numero_comprobante'] ?>"/>
+            <input type="number"  name="numero_comprobante"  placeholder="Numero comprobante"  id="numero_comprobante" value="<?php echo $obj['numero_comprobante'] ?>"/>
             <label>Guia remision:</label>
-            <input type="text" name="guia_remision" id="guia_remision" value="<?php echo $obj['guia_remision'] ?>"/>
+            <input type="text" name="guia_remision" placeholder="Guia remision" id="guia_remision" value="<?php echo $obj['guia_remision'] ?>"/>
             <label>Chofer:</label>
-            <input type="text" name="chofer" id="chofer" value="<?php echo $obj['chofer'] ?>"/>
+            <input type="text" name="chofer" placeholder="Chofer" id="chofer" value="<?php echo $obj['chofer'] ?>"/>
             <input type="hidden" name="id_login" id="id_login" value="<?php echo $_SESSION["usuario"];?>" />
         </div>
         <br/><br/>
@@ -76,10 +76,12 @@ session_start();
                 </fieldset>
                 
         <br><br>
+        <legend>liata de productos ingresados</legend> 
             <div class="product">
                 <table class="table table-bordered" id="table">
                     <thead>
                     <tr>
+<<<<<<< HEAD
                         <th>Item</th>
                          <th>Producto</th>
           
@@ -88,10 +90,19 @@ session_start();
                              <th>Stock</th>
                             <th>Cantidad</th>
                             <th>Acciones</th>
+=======
+                        <th style="text-align: center" >Item</th>
+                        <th style="text-align: center">Producto</th>
+                        <th style="text-align: center">Categoria</th>
+                        <th style="text-align: center">Unidad medida</th>
+                        <th style="text-align: center">Stock</th>
+                        <th style="text-align: center">Cantidad</th>
+                        <th style="text-align: center">Acciones</th>
+>>>>>>> eb0edc6651c1c51eda382ae4643a9d21651e223d
                     </tr>
-                 
-                   
+
                     </thead>
+                    
                     <tbody id="cuerpo_table">
                         <?php 
                         $cont=0;
@@ -113,21 +124,35 @@ session_start();
                         }
                         ?>
                     </tbody>
+                    
+                         <tr role="row">              
+                          <th>&nbsp;</th>
+                          <th>&nbsp;</th>
+                          <th>&nbsp;</th>
+                          <th>&nbsp;</th>
+                          <th>&nbsp;</th>
+                          <th>&nbsp;</th>
+                          <th>&nbsp;</th>
+                          
+                        </tr>          
                 </table>
                 <div>
                     <table id="">
                          <tr>
                         <th colspan="5">Nro de productos</th>
-                        <th><input type=""  id="n_productos" name="" value="<?php echo $cont;?>"/></th>
+                        <th><input type="" readonly="" id="n_productos" name="" value="<?php echo $cont;?>"/></th>
                         <th>Cantidad total</th>
-                        <th><input type="text" id="cantidad_total" name="cantidad_total"  value="<?php echo $cantidad; ?>"/></th>
+                        <th><input type="text" readonly="" id="cantidad_total" name="cantidad_total"  value="<?php echo $cantidad; ?>"/></th>
                     </tr>
                     </table>
-                </div>           </div>     
-        <div class="form-control">
+                </div>           
+            </div>
+        <br><br>
+        <center><div class="span5"  >
             <input type="submit" class="btn btn-success" id="aceptar" name="aceptar"/>
             <a href="index" class="btn btn-success">Atras</a>
-        </div>   </form>
+        </div></center>   
+    </form>
 </div>
 <div name="emergente" id="emergente">
     
@@ -165,10 +190,7 @@ $(function()
        if(cantidad==''){
            alert("llene la cantidad");
        }else{
-           if(parseFloat(stock)<parseFloat(cantidad))
-           {
-               alert("No hay suficiente stock");
-           }else{
+           
        tr="<tr id='"+idarticulo+"'>";
        tr+="<td><input type= 'hidden' name='articulo[]' id='articulo[]' value='"+idarticulo+"'/>"+idarticulo+"</td>";
       
@@ -194,7 +216,7 @@ $(function()
            $("#cantidad_total").val(total_c);
            $("#n_productos").val(cantidad_t);
        }
-       }
+       
        }
        return false;
    });

@@ -41,13 +41,19 @@ and open the template in the editor.
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
     </head>
+<<<<<<< HEAD
     <body class="skin-blue" style="background: #c9f1fd repeat;">
         <!-- header logo: style can be found in header.less -->
+=======
+    <body class="skin-blue">
+        
+        <!-- Parte derecha -->
+>>>>>>> eb0edc6651c1c51eda382ae4643a9d21651e223d
         <header class="header">
             <a href="/<?php echo file;?>/template/index" class="logo">
-                <!-- Add the class icon to your logo image or logo icon to add the margining -->
                 Sistema de Almacenes
             </a>
+            
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
                 <!-- Sidebar toggle button-->
@@ -59,9 +65,6 @@ and open the template in the editor.
                 </a>
                 <div class="navbar-right">
                     <ul class="nav navbar-nav">
-                        <!-- Messages: style can be found in dropdown.less-->
-                      
-                        <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-user"></i>
@@ -70,21 +73,25 @@ and open the template in the editor.
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header bg-light-blue">
-                                    <img src="/<?php echo file; ?>/img/avatar3.png" class="img-circle" alt="User Image" />
+                                    <img src="/<?php echo file; ?>/img/almacen.jpg" class="img-circle" alt="User Image" />
                                     <p>
                                        <?php echo $_SESSION['nombre'];?> - Encargado de almacen
                                        <small>Conectado <?php echo date("Y-m-d"); ?></small>
                                     </p>
                                 </li>
+<<<<<<< HEAD
                                 <!-- Menu Body -->
                               
                                 <!-- Menu Footer-->
+=======
+                              
+>>>>>>> eb0edc6651c1c51eda382ae4643a9d21651e223d
                                 <li class="user-footer">
                                     <div class="pull-left">
                                         <a href="#" class="btn btn-default btn-flat">Perfil</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="/<?php echo file; ?>/login/logout" class="btn btn-default btn-flat">Sign out</a>
+                                        <a href="/<?php echo file; ?>/login/logout" class="btn btn-default btn-flat">Salir</a>
                                     </div>
                                 </li>
                             </ul>
@@ -93,6 +100,8 @@ and open the template in the editor.
                 </div>
             </nav>
         </header>
+        
+        <!-- Parte izquierda-->
         <div class="wrapper row-offcanvas row-offcanvas-left">
             <!-- Left side column. contains the logo and sidebar -->
             <aside class="left-side sidebar-offcanvas">
@@ -101,10 +110,10 @@ and open the template in the editor.
                     <!-- Sidebar user panel -->
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img src="/<?php echo file; ?>/img/avatar3.png" class="img-circle" alt="User Image" />
+                            <img src="/<?php echo file; ?>/img/almacen.jpg" class="img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
-                            <p>Hello, <?php echo $_SESSION['nombre'];?></p>
+                            <p>Bienvenido: <?php echo $_SESSION['nombre'];?></p>
 
                             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                         </div>
@@ -122,8 +131,8 @@ and open the template in the editor.
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li class="active">
-                            <a href="index">
-                                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                            <a href="/<?php echo file;?>/template/index">
+                                <i class="fa fa-dashboard"></i> <span>Inicio</span>
                             </a>
                         </li>
                         
@@ -139,8 +148,13 @@ and open the template in the editor.
                                 <li><a href="/<?php echo file;?>/articulo/index"><i class="fa fa-angle-double-right"></i> Articulos</a></li>
                                 <li><a href="/<?php echo file;?>/unidad/index"><i class="fa fa-angle-double-right"></i> Unidades medidas</a></li>
                                 <li><a href="/<?php echo file;?>/categoria/index"><i class="fa fa-angle-double-right"></i> Categoria </a></li>
+<<<<<<< HEAD
                                 <li><a href="/<?php echo file;?>/reportes/index_entradas"><i class="fa fa-angle-double-right"></i> reportes entrada </a></li>
                                  <li><a href="/<?php echo file;?>/reportes/index_salidas"><i class="fa fa-angle-double-right"></i> reportes Salida </a></li>
+=======
+                                <li><a href="/<?php echo file;?>/"><i class="fa fa-angle-double-right"></i> Proveedor </a></li>
+
+>>>>>>> eb0edc6651c1c51eda382ae4643a9d21651e223d
                             </ul>
                         </li>
                       
@@ -148,23 +162,15 @@ and open the template in the editor.
                             <a href="/<?php echo file;?>/usuario/index">
                                 <i class="fa fa-users"></i> <span>Usuarios</span>
                             </a>
-                        </li>
-                    
-                      
-                       
-                       
+                        </li>   
                     </ul>
                 </section>
-                <!-- /.sidebar -->
             </aside>
 
             <!-- Right side column. Contains the navbar and content of the page -->
             <aside class="right-side">
-                
-                <!-- Content Header (Page header) -->
-                
-
                 <!-- Main content -->
+<<<<<<< HEAD
                 <section class="content" style="background: #c9f1fd repeat;">
                     
 <?php echo $content;?>
@@ -183,6 +189,15 @@ and open the template in the editor.
 
         <!-- add new calendar event modal -->
 
+=======
+                <section class="content">
+                    <?php echo $content;?>
+               </section><!-- /.Left col -->
+                        <!-- right col (We are only adding the ID to make the widgets sortable)-->
+                        
+            </aside>            
+        </div>
+>>>>>>> eb0edc6651c1c51eda382ae4643a9d21651e223d
 
         <!-- jQuery 2.0.2 -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.jss"></script>
