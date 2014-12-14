@@ -54,7 +54,7 @@ INNER JOIN unidad_medida ON unidad_medida.id_medida = articulos.id_medida
 INNER JOIN categoria ON categoria.id_categoria = articulos.id_categoria
 WHERE fecha_entrada>=?and fecha_entrada<=?",array($_REQUEST['fi'],$_REQUEST['ff']));       
         $view->setData($data);
-         $view->setLayout("template/_blank.php");
+         $view->setLayout("template/layout.php");
         $view->setTemplate("template/reportes_entrada/kardex.php");
         $view->render();  
 }
@@ -84,7 +84,7 @@ INNER JOIN unidad_medida ON unidad_medida.id_medida = articulos.id_medida
 INNER JOIN categoria ON categoria.id_categoria = articulos.id_categoria
 WHERE fecha_entrada>=?and fecha_entrada<=?",array($_REQUEST['fi'],$_REQUEST['ff']));       
         $view->setData($data);
-         $view->setLayout("template/_blank.php");
+         $view->setLayout("template/layout.php");
         $view->setTemplate("template/reportes_entrada/kardex.php");
         $view->render();  
 }

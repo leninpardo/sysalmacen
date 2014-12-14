@@ -7,9 +7,7 @@ and open the template in the editor.
 <html>
     <thead></thead>
 <?php
-header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-header('Content-Disposition: attachment;filename="kardex.xls"');
-header('Cache-Control: max-age=0');
+
 ?>
     <tbody>
 <table class="table table-bordered table-hover" border="1">

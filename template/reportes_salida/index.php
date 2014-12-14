@@ -9,7 +9,7 @@ and open the template in the editor.
     <div>
         <fieldset>
             <legend>Datos a procesar</legend>
-            <form name="" id="frm" action="procesamiento_salida" method="post" target="_blank">
+            <form name="" id="frm" action="procesamiento_salida" method="post" >
             <label>Fecha:</label>
             <input type="date" value="" id="fi" name="fi"/>
             <label>Fecha:</label>
