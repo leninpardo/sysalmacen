@@ -82,9 +82,10 @@ session_start();
                     <tr>
                         <th>Item</th>
                          <th>Producto</th>
-                          <th>Stock</th>
+          
                            <th>Unidad medida</th>
                             <th>Categoria</th>
+                             <th>Stock</th>
                             <th>Cantidad</th>
                             <th>Acciones</th>
                     </tr>

@@ -41,7 +41,7 @@ and open the template in the editor.
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
     </head>
-    <body class="skin-blue">
+    <body class="skin-blue" style="background: #c9f1fd repeat;">
         <!-- header logo: style can be found in header.less -->
         <header class="header">
             <a href="/<?php echo file;?>/template/index" class="logo">
@@ -77,17 +77,7 @@ and open the template in the editor.
                                     </p>
                                 </li>
                                 <!-- Menu Body -->
-                                <li class="user-body">
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Followers</a>
-                                    </div>
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Sales</a>
-                                    </div>
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Friends</a>
-                                    </div>
-                                </li>
+                              
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
@@ -149,7 +139,8 @@ and open the template in the editor.
                                 <li><a href="/<?php echo file;?>/articulo/index"><i class="fa fa-angle-double-right"></i> Articulos</a></li>
                                 <li><a href="/<?php echo file;?>/unidad/index"><i class="fa fa-angle-double-right"></i> Unidades medidas</a></li>
                                 <li><a href="/<?php echo file;?>/categoria/index"><i class="fa fa-angle-double-right"></i> Categoria </a></li>
-                                
+                                <li><a href="/<?php echo file;?>/reportes/index_entradas"><i class="fa fa-angle-double-right"></i> reportes entrada </a></li>
+                                 <li><a href="/<?php echo file;?>/reportes/index_salidas"><i class="fa fa-angle-double-right"></i> reportes Salida </a></li>
                             </ul>
                         </li>
                       
@@ -174,12 +165,13 @@ and open the template in the editor.
                 
 
                 <!-- Main content -->
-                <section class="content">
+                <section class="content" style="background: #c9f1fd repeat;">
+                    
 <?php echo $content;?>
                     
                </section><!-- /.Left col -->
                         <!-- right col (We are only adding the ID to make the widgets sortable)-->
-                        <section class="col-lg-5 connectedSortable"> 
+                        <section class="col-lg-5 connectedSortable" > 
                           
 
                         </section><!-- right col -->
