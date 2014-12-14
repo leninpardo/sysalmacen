@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50620
 File Encoding         : 65001
 
-Date: 2014-12-14 13:04:27
+Date: 2014-12-14 15:21:58
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -142,15 +142,16 @@ INSERT INTO `login` VALUES ('1', 'damner', '1234', 'damner', 'palacios gonzales'
 -- ----------------------------
 DROP TABLE IF EXISTS `proveedor`;
 CREATE TABLE `proveedor` (
-  `idproveedor` int(11) DEFAULT NULL,
+  `idproveedor` int(11) NOT NULL,
   `nombre` text,
-  `direccion` text
+  `direccion` text,
+  PRIMARY KEY (`idproveedor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of proveedor
 -- ----------------------------
-INSERT INTO `proveedor` VALUES ('1', 'cocorocos', null);
+INSERT INTO `proveedor` VALUES ('1', 'cocorocos', 'b');
 
 -- ----------------------------
 -- Table structure for `salida`

@@ -28,8 +28,8 @@ and open the template in the editor.
                     <thead>
                         <tr>
                             <th rowspan="2">Item</th>
-                            <th rowspan="2"> Categoria</th>
-                      
+                            <th rowspan="2">proveedor</th>
+                            <th rowspan="2"> Direccion</th>
                             <th   colspan="3">Acciones</th>
                         </tr>
                         <tr>
@@ -41,11 +41,11 @@ and open the template in the editor.
                         <?php
                         foreach ($grid as $ds){
                             echo "<tr>";
-                            echo "<td>".$ds['id_categoria']."</td>";
-                            echo "<td>".$ds['categoria']."</td>";
-                       
-                            echo "<td><a class='btn btn-info' href='edit&id=".$ds['id_categoria']."'><i class='btn'></i></a></td>";
-                          echo "<td><a class='btn btn-info' href='delete&id=".$ds['id_categoria']."'><i class='btn'></i></a></td>";
+                            echo "<td>".$ds['idproveedor']."</td>";
+                            echo "<td>".$ds['nombre']."</td>";
+                             echo "<td>".$ds['direccion']."</td>";
+                            echo "<td><a class='btn btn-info' href='edit&id=".$ds['idproveedor']."'><i class='btn'></i></a></td>";
+                          echo "<td><a class='btn btn-info' href='delete&id=".$ds['idproveedor']."'><i class='btn'></i></a></td>";
                             
                             echo "</tr>";
                         }

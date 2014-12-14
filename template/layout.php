@@ -41,14 +41,14 @@ and open the template in the editor.
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
     </head>
-<<<<<<< HEAD
+
     <body class="skin-blue" style="background: #c9f1fd repeat;">
         <!-- header logo: style can be found in header.less -->
-=======
+
     <body class="skin-blue">
         
         <!-- Parte derecha -->
->>>>>>> eb0edc6651c1c51eda382ae4643a9d21651e223d
+
         <header class="header">
             <a href="/<?php echo file;?>/template/index" class="logo">
                 Sistema de Almacenes
@@ -79,13 +79,6 @@ and open the template in the editor.
                                        <small>Conectado <?php echo date("Y-m-d"); ?></small>
                                     </p>
                                 </li>
-<<<<<<< HEAD
-                                <!-- Menu Body -->
-                              
-                                <!-- Menu Footer-->
-=======
-                              
->>>>>>> eb0edc6651c1c51eda382ae4643a9d21651e223d
                                 <li class="user-footer">
                                     <div class="pull-left">
                                         <a href="#" class="btn btn-default btn-flat">Perfil</a>
@@ -148,13 +141,12 @@ and open the template in the editor.
                                 <li><a href="/<?php echo file;?>/articulo/index"><i class="fa fa-angle-double-right"></i> Articulos</a></li>
                                 <li><a href="/<?php echo file;?>/unidad/index"><i class="fa fa-angle-double-right"></i> Unidades medidas</a></li>
                                 <li><a href="/<?php echo file;?>/categoria/index"><i class="fa fa-angle-double-right"></i> Categoria </a></li>
-<<<<<<< HEAD
+                                   <li><a href="/<?php echo file;?>/proveedor/index"><i class="fa fa-angle-double-right"></i> Proveedor </a></li>
                                 <li><a href="/<?php echo file;?>/reportes/index_entradas"><i class="fa fa-angle-double-right"></i> reportes entrada </a></li>
                                  <li><a href="/<?php echo file;?>/reportes/index_salidas"><i class="fa fa-angle-double-right"></i> reportes Salida </a></li>
-=======
-                                <li><a href="/<?php echo file;?>/"><i class="fa fa-angle-double-right"></i> Proveedor </a></li>
+                             
 
->>>>>>> eb0edc6651c1c51eda382ae4643a9d21651e223d
+
                             </ul>
                         </li>
                       
@@ -170,7 +162,6 @@ and open the template in the editor.
             <!-- Right side column. Contains the navbar and content of the page -->
             <aside class="right-side">
                 <!-- Main content -->
-<<<<<<< HEAD
                 <section class="content" style="background: #c9f1fd repeat;">
                     
 <?php echo $content;?>
@@ -183,21 +174,8 @@ and open the template in the editor.
                         </section><!-- right col -->
                     </div><!-- /.row (main row) -->
 
-                </section><!-- /.content -->
-            </aside><!-- /.right-side -->
-        </div><!-- ./wrapper -->
+              
 
-        <!-- add new calendar event modal -->
-
-=======
-                <section class="content">
-                    <?php echo $content;?>
-               </section><!-- /.Left col -->
-                        <!-- right col (We are only adding the ID to make the widgets sortable)-->
-                        
-            </aside>            
-        </div>
->>>>>>> eb0edc6651c1c51eda382ae4643a9d21651e223d
 
         <!-- jQuery 2.0.2 -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.jss"></script>
