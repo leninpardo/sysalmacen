@@ -81,24 +81,13 @@ session_start();
                 <table class="table table-bordered" id="table">
                     <thead>
                     <tr>
-<<<<<<< HEAD
                         <th>Item</th>
                          <th>Producto</th>
-          
                            <th>Unidad medida</th>
                             <th>Categoria</th>
                              <th>Stock</th>
                             <th>Cantidad</th>
                             <th>Acciones</th>
-=======
-                        <th style="text-align: center" >Item</th>
-                        <th style="text-align: center">Producto</th>
-                        <th style="text-align: center">Categoria</th>
-                        <th style="text-align: center">Unidad medida</th>
-                        <th style="text-align: center">Stock</th>
-                        <th style="text-align: center">Cantidad</th>
-                        <th style="text-align: center">Acciones</th>
->>>>>>> eb0edc6651c1c51eda382ae4643a9d21651e223d
                     </tr>
 
                     </thead>
