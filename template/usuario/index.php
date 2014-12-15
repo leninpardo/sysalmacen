@@ -14,7 +14,9 @@ and open the template in the editor.
                         <li class="active">index</li>
                     </ol>
     </section>
-       
+     <div>
+                        <li><a  href="nuevo" class="btn btn-primary">Nuevo</a></li>
+                     </div>  
 <div class="box">
                                 <div class="box-header">
                                     <h3 class="box-title">Lista de usuarios</h3>
@@ -42,8 +44,8 @@ and open the template in the editor.
                                         echo "<td>".$g['id_login']."</td>";
                                          echo "<td>".$g['nombre']."</td>";
                                         
-                                          echo "<td><a>Editar</a></td>";
-                                          echo "<td><a>Eliminar</a></td>";
+                                          echo "<td><a href='editar&id=".$g['id_login']."'>Editar</a></td>";
+                                          echo "<td><a href='delete&id=".$g['id_login']."'>Eliminar</a></td>";
                                         echo "</tr>";
                                     }
                                     ?>

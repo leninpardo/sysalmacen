@@ -165,7 +165,25 @@ WHERE detalle_entrada.id_entradas=?", array($_REQUEST['id']));
         $view->setTemplate("template/entrada/new.php");
         $view->render(); 
     }
-    
+        public function ver() {
+          $cate=new entrada();
+         $view=new View();
+        $data=array();
+        $_REQUEST['id_entradas']=$_REQUEST['id'];
+        $cate->find($_REQUEST);
+        $data["obj"]=$cate->getFields();
+        $data['proveedor'] = ORMConnection::Execute("select *from proveedor");
+        ////////////////////////////////////
+        $data['obj_detalle']=  ORMConnection::Execute("SELECT articulos.id_articulo,articulos.descripcion,categoria.categoria,unidad_medida.unidad_medida,articulos.stock,detalle_entrada.cantidad
+from articulos INNER JOIN detalle_entrada on(detalle_entrada.id_articulo=articulos.id_articulo)
+INNER JOIN categoria on(categoria.id_categoria=articulos.id_categoria)
+INNER JOIN  unidad_medida on(unidad_medida.id_medida=articulos.id_medida)
+WHERE detalle_entrada.id_entradas=?", array($_REQUEST['id']));
+        $view->setData($data);
+         $view->setLayout("template/layout.php");
+        $view->setTemplate("template/entrada/ver.php");
+        $view->render(); 
+    }
     public function eliminar(){
          $cate = new entrada();
         try {

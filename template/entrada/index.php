@@ -48,7 +48,7 @@ and open the template in the editor.
                                 echo "<td>".$g['id_entradas']."</td>";
                                 echo "<td>".$g['fecha_entrada']."</td>";
                                 echo "<td>".$g['numero_comprobante']."</td>";
-                              
+                                echo "<td><a href='ver&id=".$g['id_entradas']."' >Ver</a></td>";
                                 echo "<td><a href='editar&id=".$g['id_entradas']."' >editar</a></td>";
                                 echo "<td><a href='eliminar&id=".$g['id_entradas']."'>eliminar</a></td>";
                                 echo "</tr>";

@@ -31,16 +31,82 @@ class usuario_controller extends controller_api{
        //echo $usuario->all();
 
     }
-    public function guardar(){
-        $usuario=new usuario();
-        try {
-            $usuario->setFields($_REQUEST);
-            $usuario->setFind();
-            $usuario->update();
-        } catch (Exception $ex) {
-           $usuario->setFields($_REQUEST);
-           $usuario->create(true);
+   public function nuevo()
+    {
+        $view=new View();
+        $data=array();
+        $view->setData($data);
+         $view->setLayout("template/layout.php");
+        $view->setTemplate("template/usuario/new.php");
+        $view->render();  
+    }
+        public function editar()
+    {
+        $cate=new usuario();
+         $view=new View();
+        $data=array();
+        $_REQUEST['id_login']=$_REQUEST['id'];
+        $cate->find($_REQUEST);
+        $data["obj"]=$cate->getFields();
+        $view->setData($data);
+         $view->setLayout("template/layout.php");
+        $view->setTemplate("template/usuario/new.php");
+        $view->render();  
+    }
+ 
+        public function save()
+    {
+       $cate = new usuario();
+        if ($_REQUEST['id_login'] == null) {
+            try {
+                $_REQUEST['id_login'] = $cate->max_id("id_login");
+                $cate->setFields($_REQUEST);
+                $cate->create(true);
+            } catch (ORMException $e) {
+                $respuesta = "error" . $e;
+            }
+        } else {
+            try {
+                $cate->find($_REQUEST);
+                $cate->setFields($_REQUEST);
+                $cate->update();
+            } catch (ORMException $e) {
+                $respuesta = "error" . $e;
+            }
         }
-        
+        if ($respuesta == null) {
+            echo "<script>window.location='index';</script>";
+        } else {
+            ///en caso que ocurra un error
+            $view = new View();
+            $data = array();
+            $data['message'] = $respuesta;
+            $view->setData($data);
+            $view->setLayout("template/layout.php");
+            $view->setTemplate("template/usuario/new.php");
+            $view->render();
+        }
+    }
+        public function delete()
+    {
+        $cate = new usuario();
+        try {
+            $_REQUEST['id_login'] = $_REQUEST['id'];
+            $cate->find($_REQUEST);
+            $cate->delete();
+        } catch (ORMException $e) {
+            $respuesta = "error" . $e;
+        }
+        if ($respuesta == null) {
+            echo "<script>window.location='index';</script>";
+        } else {
+            $view = new View();
+            $data = array();            
+            $data['message'] = $respuesta;
+            $view->setData($data);
+            $view->setLayout("template/layout.php");
+            $view->setTemplate("template/usuario/index.php");
+            $view->render();
+        }
     }
 }
