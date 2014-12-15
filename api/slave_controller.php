@@ -21,7 +21,6 @@ class slave_controller {
             $url = filter_input(INPUT_GET, 'url', FILTER_SANITIZE_URL);
           
             $url = explode('/', $url);
-           
             $url = array_filter($url);
             $this->controller= strtolower(array_shift($url))."_controller";
             $this->action = strtolower(array_shift($url));

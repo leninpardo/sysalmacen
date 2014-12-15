@@ -32,8 +32,8 @@ and open the template in the editor.
         $i++;
         echo "<tr>";
         echo "<td>" . $i . "</td>";
-        echo "<td>" . $kd['id_entradas'] . "</td>";
-        echo "<td>" . $kd['fecha_entrada'] . "</td>";
+        echo "<td>" . $kd['id_salida'] . "</td>";
+        echo "<td>" . $kd['fecha_salida'] . "</td>";
         echo "<td>" . $kd['tiempo'] . "</td>";
         echo "<td>" . $kd['tipo_comprobante'] . "</td>";
         echo "<td>" . $kd['numero_comprobante'] . "</td>";
